@@ -95,8 +95,6 @@ Abra o **PowerShell na raiz do ODPro**. Com o ambiente nos caminhos padrão:
 
 O executável será gerado em `build/ODPro.exe`. O parâmetro `PROJECT_NAME=ODPro` fixa esse nome mesmo que a pasta tenha sido baixada do GitHub como `ODPro-main`.
 
-Compilação conferida em 11/09/2026, em uma cópia do projeto com as dependências locais originais, raylib com cabeçalho 6.0 e GCC 15.2.0, sem Eigen/cereal/RapidJSON. O executável foi gerado com sucesso; houve avisos de parâmetro não utilizado e de uso de `std::wstring_convert` obsoleto. Não foram validados a execução gráfica, os cálculos nem uma instalação nova das dependências baixadas da internet.
-
 Para compilar e executar em um único comando:
 
 ```powershell
