@@ -46,7 +46,7 @@ As bibliotecas podem ser instaladas localmente, sem serem incluídas no reposit�
 | [raylib](https://github.com/raysan5/raylib) | 6.0, declarada no cabeçalho instalado | `C:/raylib/raylib`, fora do projeto |
 | [Dear ImGui](https://github.com/ocornut/imgui/tree/v1.90.6) | 1.90.6 | `external/imgui/` |
 | [ImPlot](https://github.com/epezent/implot) | 1.0, declarada no cabeçalho local | `external/implot/` |
-| [rlImGui](https://github.com/raylib-extras/rlImGui) | Revisão não identificada na cópia local | `external/rlimgui/` |
+| [rlImGui](https://github.com/raylib-extras/rlImGui) | Commit não identificado | `external/rlimgui/` |
 
 Extraia o conteúdo de cada pacote diretamente no destino indicado. Por exemplo, deve existir `external/imgui/imgui.h`, e não `external/imgui/imgui-1.90.6/imgui.h`.
 
