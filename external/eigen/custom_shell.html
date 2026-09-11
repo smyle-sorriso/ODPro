@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>2D Editor Web</title>
+    <link rel="icon" href="data:,">
+    <style>
+        /* Removes scrollbars and margins */
+        body, html { 
+            margin: 0; 
+            padding: 0; 
+            width: 100vw; 
+            height: 100vh; 
+            overflow: hidden; 
+            background-color: black;
+        }
+        
+        /* Canvas fills the screen perfectly and forces the browser to not blur it */
+        canvas.emscripten { 
+            border: 0px none; 
+            background-color: black; 
+            width: 100vw; 
+            height: 100vh; 
+            display: block;
+            outline: none;
+        }
+    </style>
+  </head>
+  <body>
+    <!-- The canvas where Raylib draws -->
+    <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" tabindex="-1"></canvas>
+    
+    <script type='text/javascript'>
+        var Module = {
+            preRun: [],
+            postRun: [],
+            /* No visible console output, prints only go to DevTools F12 */
+            print: (function() {
+                return function(text) {
+                    if (arguments.length > 1) text = Array.prototype.slice.call(arguments).join(' ');
+                    console.log(text);
+                };
+            })(),
+            printErr: function(text) {
+                if (arguments.length > 1) text = Array.prototype.slice.call(arguments).join(' ');
+                console.error(text);
+            },
+            canvas: (function() {
+                var canvas = document.getElementById('canvas');
+
+                // Prevent context loss gracefully
+                canvas.addEventListener("webglcontextlost", function(e) { alert('WebGL context lost. You will need to reload the page.'); e.preventDefault(); }, false);
+
+                return canvas;
+            })()
+        };
+    </script>
+    
+    <!-- This tag will be replaced by Emscripten with the actual JS code -->
+    {{{ SCRIPT }}}
+  </body>
+</html>
